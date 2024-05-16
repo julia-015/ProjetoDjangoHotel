@@ -37,7 +37,7 @@ def nome(request):
             user = usuario(nome=var_nome, sobrenome=var_sobrenome, email=var_email, idade=var_idade, endereco=var_endereco, quarto=var_quarto, data=var_data)
             user.save()
 
-            return HttpResponse("<h1>Thanks</h1>")
+            return HttpResponse("<h1>Reserva Realizada com Sucesso!</h1><br><h1>Obrigado Pela Preferência!</h1>")
     else:
         form = FormNome()
 

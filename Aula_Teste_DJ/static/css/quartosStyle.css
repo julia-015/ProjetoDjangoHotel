@@ -1,7 +1,19 @@
+.imagem-quarto{
+    width: 200px;
+    height: 160px;
+    border-radius: 8px;
+}
 
 .styleQuartos{
     font-family: 'Courier New', Courier, monospace;
     padding: 20px;
+    background-color: #f5c2dac6;
+    width: 800px;
+    margin-left: 200px;
+    margin-top: 30px;
+    margin: 3;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
 }
 
 .styleQuartos a{

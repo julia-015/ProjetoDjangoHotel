@@ -11,4 +11,4 @@ class FormNome(forms.Form):
     QUARTOS_CHOICES = [(q.tipo, q.get_tipo_display()) for q in quarto.objects.all()]
     quarto = forms.ChoiceField(label='Quarto', choices=QUARTOS_CHOICES)
     
-    data = forms.CharField(label='Data', max_length=20)
+    data = forms.DateField(label='Data', widget=forms.DateInput(attrs={'type': 'date'}))

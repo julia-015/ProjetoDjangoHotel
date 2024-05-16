@@ -11,13 +11,19 @@ QUARTOS
 
 {% for item in dados_quarto %}
 
-<div class="styleQuartos">
-    <img src="{{ item.foto_quarto.url }}" class="card-img-top" alt="Logo">
+<div class="estiloFundo">
+    <div class="styleQuartos">
+        <img src="{{ item.foto_quarto.url }}" class="card-img-top imagem-quarto" alt="Logo">
+    
+        <h5 class="card-title">{{ item.tipo}}</h5>
+        <p class="card-text"><b>Descrição: </b>{{ item.descricao }}</p>
+        <p class="card-text"><b>Disponibilidade: </b>{{ item.disponibilidade }}</p>
+        <a href="{% url 'reserva' %}" class="btn" style="background-color: #fa8fc1c6; color: #000000; border-radius: 5px;">Reservar</a>
+        <br>
+    </div>
+    <p>-----------------------------------------------------------------------------------------------------------------------------------</p>
+    
 
-    <h5 class="card-title">{{ item.tipo}}</h5>
-    <p class="card-text"><b>Descrição: </b>{{ item.descricao }}</p>
-    <p class="card-text">Disponibilidade: {{ item.disponibilidade }}</p>
-    <a href="{% url 'reserva' %}" class="btn" style="background-color: #fa8fc1c6; color: #000000; border-radius: 5px;">Reservar</a>
 </div>
 
 {% endfor %}
