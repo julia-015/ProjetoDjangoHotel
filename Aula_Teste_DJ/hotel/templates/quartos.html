@@ -17,7 +17,7 @@ QUARTOS
     <h5 class="card-title">{{ item.tipo}}</h5>
     <p class="card-text"><b>Descrição: </b>{{ item.descricao }}</p>
     <p class="card-text">Disponibilidade: {{ item.disponibilidade }}</p>
-    <a href="#" class="btn" style="background-color: #fa8fc1c6; color: #000000; border-radius: 5px;">Reservar</a>
+    <a href="{% url 'nome' %}" class="btn" style="background-color: #fa8fc1c6; color: #000000; border-radius: 5px;">Reservar</a>
 </div>
 
 {% endfor %}
