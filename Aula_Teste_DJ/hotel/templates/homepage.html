@@ -4,12 +4,12 @@
 
 
 {% block title %}
-    HOME 
+HOME
 {% endblock %}
 
 {% block body %}
 
-    <!-- <ul>
+<!-- <ul>
         {% for item in dados_hotel%}
         <h3>{{item.descricao}}</h3>
         <li>
@@ -19,18 +19,29 @@
     </ul>  -->
 
 
-    <!-- <h1>
+<!-- <h1>
         HOTEL SENAI
     </h1>
 
     <img src="{% static 'img/senai.png' %}" alt="SENAI">
      -->
 
-            {% for item in dados_hotel %}
-                <div class="styleHome">
-                    <h1>{{ item.titulo }}</h1>
-                    <p><b>Descrição: </b>{{ item.descricao }}</p>
-                </div>
-            {% endfor %}
+{% for item in dados_hotel %}
+
+<div style="font-family: 'Courier New', Courier, monospace;
+            text-align: center;
+            padding: 20px;
+            background-color: #f5c2dac6;
+            width: 800px;
+            margin-left: 220px;
+            margin-top: 140px;
+            margin: 3;
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);">
+    <h1>{{ item.titulo }}</h1>
+    <p><b>Descrição: </b>{{ item.descricao }}</p>
+</div>
+
+{% endfor %}
 
 {% endblock %}
