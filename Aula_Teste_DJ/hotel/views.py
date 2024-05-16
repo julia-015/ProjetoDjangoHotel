@@ -41,4 +41,4 @@ def nome(request):
     else:
         form = FormNome()
 
-        return render(request, "nome.html", {"form": form})
+        return render(request, "reserva.html", {"form": form})

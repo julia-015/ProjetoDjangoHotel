@@ -32,7 +32,12 @@ class quarto(models.Model):
 
 class usuario(models.Model):
     nome = models.CharField(max_length=20)
+    sobrenome = models.CharField(max_length=20)
     email = models.CharField(max_length=50)
+    idade = models.CharField(max_length=3)
+    endereco = models.CharField(max_length=50)
+    quarto = models.CharField(max_length=10)
+    data = models.CharField(max_length=20)
 
     def __str__(self):
         return self.nome
