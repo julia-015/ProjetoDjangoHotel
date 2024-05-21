@@ -1,5 +1,6 @@
 from django.shortcuts import render, HttpResponse
 from .models import *
+from django.contrib import messages
 from .forms import FormNome, FormCadastro, FormLogin
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login
@@ -43,6 +44,7 @@ def nome(request):
 
             return HttpResponse("<div style=\"font-family: 'Courier New', Courier, monospace; background-color: #f5c2dac6; text-align: center; padding: 20px; border-radius: 8px; margin: 45px;\"><h1>Reserva Realizada com Sucesso!</h1><br><h1>Obrigado Pela Preferência!</h1></div>")
 
+
     else:
         form = FormNome()
 
@@ -65,7 +67,10 @@ def cadastro(request):
             user.last_name = var_last_name
             user.save()
 
-            return HttpResponse("<div style=\"font-family: 'Courier New', Courier, monospace; background-color: #f5c2dac6; text-align: center; padding: 20px; border-radius: 8px; margin: 45px;\"><h1>Cadastro Realizado com Sucesso!</h1><br><h1>Obrigado Pela Preferência!</h1></div>")
+            # return HttpResponse("<div style=\"font-family: 'Courier New', Courier, monospace; background-color: #f5c2dac6; text-align: center; padding: 20px; border-radius: 8px; margin: 45px;\"><h1>Cadastro Realizado com Sucesso!</h1><br><h1>Obrigado Pela Preferência!</h1></div>")
+
+            messages.success(request, 'Cadastro realizado com sucesso! Obrigado pela preferência.')
+            return redirect('login')
 
     else:
         form = FormCadastro()
@@ -89,10 +94,11 @@ def login(request):
 
                    
             if user is not None:
-                return redirect('home')  # Redirecionar para a página inicial após o login bem-sucedido       
+                messages.success(request, 'Login realizado com sucesso!')
+                return redirect('reserva')        
             else:
-                return HttpResponse("<div style=\"font-family: 'Courier New', Courier, monospace; background-color: #f5c2dac6; text-align: center; padding: 20px; border-radius: 8px; margin: 45px;\"><h1>Usuário ou Senha Incorretos!</h1></div>")
-
+                # return HttpResponse("<div style=\"font-family: 'Courier New', Courier, monospace; background-color: #f5c2dac6; text-align: center; padding: 20px; border-radius: 8px; margin: 45px;\"><h1>Usuário ou Senha Incorretos!</h1></div>")
+                return redirect('login')
 
     else:
         form = FormLogin()
