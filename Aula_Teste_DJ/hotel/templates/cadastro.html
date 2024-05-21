@@ -1,0 +1,16 @@
+{% extends 'index.html' %}
+
+{% block title %}
+    HOTEL SENAI - CADASTRO
+{% endblock %}
+
+{% block body %}
+    
+    <form action="cadastro" method="post">
+        {% csrf_token %}
+        {{form}}
+        <br><br>
+        <input type="submit" value="Submit">
+    </form>
+
+{% endblock %}
