@@ -20,6 +20,7 @@ form {
 form input[type="text"],
 form select,
 form input[type="submit"],
+form input[type="email"],
 form input[type="date"],
 form input[type="password"] {
     width: 100%;

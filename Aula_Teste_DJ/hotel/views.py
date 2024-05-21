@@ -3,6 +3,8 @@ from .models import *
 from .forms import FormNome, FormCadastro, FormLogin
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login
+from django.conf import settings
+from django.shortcuts import redirect
 
 # Create your views here.
 
@@ -80,10 +82,17 @@ def login(request):
             var_password = form.cleaned_data['password']
 
             user = authenticate(username=var_user, password=var_password)
+            # if user is not None:
+            #     return HttpResponse("<div style=\"font-family: 'Courier New', Courier, monospace; background-color: #f5c2dac6; text-align: center; padding: 20px; border-radius: 8px; margin: 45px;\"><h1>Login Realizado com Sucesso!</h1><br><h1>Obrigado Pela Preferência!</h1></div>")
+            # else:
+            #     return HttpResponse("<div style=\"font-family: 'Courier New', Courier, monospace; background-color: #f5c2dac6; text-align: center; padding: 20px; border-radius: 8px; margin: 45px;\"><h1>Usuário ou Senha Incorretos!</h1></div>")
+
+                   
             if user is not None:
-                return HttpResponse("<div style=\"font-family: 'Courier New', Courier, monospace; background-color: #f5c2dac6; text-align: center; padding: 20px; border-radius: 8px; margin: 45px;\"><h1>Login Realizado com Sucesso!</h1><br><h1>Obrigado Pela Preferência!</h1></div>")
+                return redirect('home')  # Redirecionar para a página inicial após o login bem-sucedido       
             else:
                 return HttpResponse("<div style=\"font-family: 'Courier New', Courier, monospace; background-color: #f5c2dac6; text-align: center; padding: 20px; border-radius: 8px; margin: 45px;\"><h1>Usuário ou Senha Incorretos!</h1></div>")
+
 
     else:
         form = FormLogin()
