@@ -19,7 +19,9 @@ form {
 
 form input[type="text"],
 form select,
-form input[type="submit"] {
+form input[type="submit"],
+form input[type="date"],
+form input[type="password"] {
     width: 100%;
     padding: 10px;
     margin-bottom: 15px;
@@ -27,6 +29,7 @@ form input[type="submit"] {
     border-radius: 4px;
     box-sizing: border-box;
 }
+
 
 form input[type="submit"] {
     font-family: 'Courier New', Courier, monospace;
