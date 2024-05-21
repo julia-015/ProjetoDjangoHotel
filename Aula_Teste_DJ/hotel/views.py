@@ -79,7 +79,11 @@ def login(request):
             var_user = form.cleaned_data['user']
             var_password = form.cleaned_data['password']
 
-            return HttpResponse("<div style=\"font-family: 'Courier New', Courier, monospace; background-color: #f5c2dac6; text-align: center; padding: 20px; border-radius: 8px; margin: 45px;\"><h1>Login Realizado com Sucesso!</h1><br><h1>Obrigado Pela Preferência!</h1></div>")
+            user = authenticate(username=var_user, password=var_password)
+            if user is not None:
+                return HttpResponse("<div style=\"font-family: 'Courier New', Courier, monospace; background-color: #f5c2dac6; text-align: center; padding: 20px; border-radius: 8px; margin: 45px;\"><h1>Login Realizado com Sucesso!</h1><br><h1>Obrigado Pela Preferência!</h1></div>")
+            else:
+                return HttpResponse("<div style=\"font-family: 'Courier New', Courier, monospace; background-color: #f5c2dac6; text-align: center; padding: 20px; border-radius: 8px; margin: 45px;\"><h1>Usuário ou Senha Incorretos!</h1></div>")
 
     else:
         form = FormLogin()

@@ -2,14 +2,14 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 15px;
-    gap: 780px;
+    padding: 10px;
+    gap: 400px;
 }
 
 
 .navbar{
     background-color: #fa8fc1c6;
-    height: 120px;
+    height: 100px;
     display: flex;
     align-items: center;
     
