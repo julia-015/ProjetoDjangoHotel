@@ -95,7 +95,7 @@ def login(request):
                    
             if user is not None:
                 messages.success(request, 'Login realizado com sucesso!')
-                return redirect('reserva')        
+                return redirect('quartos')        
             else:
                 # return HttpResponse("<div style=\"font-family: 'Courier New', Courier, monospace; background-color: #f5c2dac6; text-align: center; padding: 20px; border-radius: 8px; margin: 45px;\"><h1>Usuário ou Senha Incorretos!</h1></div>")
                 return redirect('login')
